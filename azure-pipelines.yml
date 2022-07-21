@@ -31,3 +31,13 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'conn'
+    appSlug: 'be484/mbl'
+    appFile: 'drop/app/build/outputs/apk/debug'
+    symbolsOption: 'Android'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'note'
+    destinationType: 'groups'
