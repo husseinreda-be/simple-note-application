@@ -31,3 +31,13 @@ steps:
     artifactName: 'drop'
     artifactType: 'container'
   displayName: Publish artifacts
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'conn'
+    appSlug: 'be484/mbl'
+    appFile: '**/*.apk'
+    symbolsOption: 'Android'
+    releaseNotesOption: 'input'
+    releaseNotesInput: 'hello'
+    destinationType: 'groups'
+    distributionGroupId: 'efbd9388-7d45-447e-8ca2-d3bc81e1e84d'
